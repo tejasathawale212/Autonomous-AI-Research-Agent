@@ -5,10 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "beautifulsoup4>=4.15.0",
     "fastapi>=0.141.1",
     "groq>=1.7.0",
+    "langgraph>=1.2.11",
     "openai>=3.13.0",
+    "pydantic>=2.13.5",
     "python-dotenv>=1.2.3",
+    "qdrant-client>=1.19.0",
+    "requests>=2.34.2",
+    "sentence-transformers>=6.0.1",
     "tavily-python>=0.8.2",
     "uvicorn>=0.52.4",
 ]
