@@ -1,17 +1,17 @@
 from app.agents.planner import create_research_plan
 
 
-plan = create_research_plan(
-    "What are the major challenges of deploying AI agents in production?"
-)
+question = "What are the major challenges of deploying AI agents in production?"
 
-print("\nObjective:")
+plan = create_research_plan(question)
+
+print("\nOBJECTIVE:")
 print(plan.objective)
 
-print("\nSub-questions:")
-for question in plan.sub_questions:
-    print("-", question)
+print("\nSUB-QUESTIONS:")
+for item in plan.sub_questions:
+    print("-", item)
 
-print("\nSearch queries:")
+print("\nSEARCH QUERIES:")
 for query in plan.search_queries:
     print("-", query)

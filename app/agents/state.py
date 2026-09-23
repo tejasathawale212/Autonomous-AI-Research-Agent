@@ -2,6 +2,7 @@ from typing import TypedDict
 
 
 class ResearchState(TypedDict):
+    research_id: str
     question: str
     objective: str
     sub_questions: list[str]
@@ -12,3 +13,11 @@ class ResearchState(TypedDict):
     retrieved_context: list[dict]
     findings: list[dict]
     final_report: str
+    evidence_sufficient: bool
+    research_iterations: int
+    max_iterations: int
+    is_research_question: bool
+
+
+
+    

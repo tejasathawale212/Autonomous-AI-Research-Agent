@@ -7,9 +7,13 @@ model = SentenceTransformer(MODEL_NAME)
 
 
 def generate_embeddings(texts: list[str]) -> list[list[float]]:
+    if not texts:
+        return []
+
     embeddings = model.encode(
         texts,
         normalize_embeddings=True,
+        show_progress_bar=False,
     )
 
     return embeddings.tolist()

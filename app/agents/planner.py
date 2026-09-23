@@ -3,6 +3,10 @@ import json
 from app.services.llm import client
 from pydantic import BaseModel
 from app.agents.state import ResearchState
+from app.prompts.planner import (
+    PLANNER_SYSTEM_PROMPT,
+    PLANNER_USER_PROMPT,
+)
 
 
 class ResearchPlan(BaseModel):
@@ -17,14 +21,13 @@ def create_research_plan(question: str) -> ResearchPlan:
         messages=[
             {
                 "role": "system",
-                "content": (
-                    "You are an expert research planner. "
-                    "Create a focused research plan for the user's question."
-                ),
+                "content": PLANNER_SYSTEM_PROMPT,
             },
             {
                 "role": "user",
-                "content": question,
+                "content": PLANNER_USER_PROMPT.format(
+                    question=question
+                ),
             },
         ],
         response_format={
